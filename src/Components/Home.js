@@ -1,7 +1,7 @@
 import React , {useState, useEffect }from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
-const Home =(Props)=> {
+const Home =()=> {
 
     const [Users,setUsers] = useState(null);
     
@@ -11,7 +11,7 @@ useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res =>{
         
-        setUsers(res.data)
+        setUsers(res.data);
         console.log(Users) ;
     })
 
@@ -19,7 +19,6 @@ useEffect(() => {
 },[]);
 
   
-
     return(
         <div className="App">
         

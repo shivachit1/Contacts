@@ -11,7 +11,7 @@ const UserDetails=(props)=> {
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
        
-        setLoading(true);
+        
         axios.get(`https://jsonplaceholder.typicode.com/users/`+id)
         .then(res =>{
             setUser(res.data)
@@ -35,7 +35,7 @@ const UserDetails=(props)=> {
             <h3>- phone: {User.phone}</h3>
             <h3>- company: {User.company.name}</h3>
             <h3>- website: {User.website}</h3>
-            <h3>- address</h3>
+            <h3>-address</h3>
             <ul>
                 <li><h3>street: {User.address.street}</h3></li>
                 <li><h3>suite: {User.address.suite}</h3></li>
