@@ -16,11 +16,10 @@ const UserDetails=(props)=> {
         .then(res =>{
             setUser(res.data)
             setLoading(false);
-            console.log(res) ;
         })
     
     
-      },[]);
+      },[id]);
 
     return(
         <div className="card-details-div">

@@ -4,19 +4,23 @@ import UserCard from './UserCard';
 const Home =()=> {
 
     const [Users,setUsers] = useState(null);
-    
+    const [loading,setLoading] = useState(true);
 
 useEffect(() => {
-    console.log('use effect is called.')
-    axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res =>{
-        
-        setUsers(res.data);
-        console.log(Users) ;
-    })
+    console.log('use effect is called.');
+    
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(res =>{
+            
+            setUsers(res.data);
+            setLoading(false);
+            console.log(Users) ;
+        });
+      
+    
 
 
-},[]);
+},[loading]);
 
   
     return(
