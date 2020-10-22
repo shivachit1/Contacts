@@ -3,11 +3,7 @@ import axios from 'axios';
 import UserCard from './UserCard';
 const Home =()=> {
 
-    const [Users,setUsers] = useState(null);
-    
-    
-   
-
+const [Users,setUsers] = useState(null);
 
 useEffect(() => {
  
@@ -15,10 +11,11 @@ useEffect(() => {
 
 },[]);
 
+// asyn call for getting data from API
 const fetchData  = async () => {
     await axios.get('https://jsonplaceholder.typicode.com/users')
     .then(res =>{
-        
+        // saved response data to Users array
         setUsers(res.data);
     })
   }
@@ -29,15 +26,19 @@ const fetchData  = async () => {
         
             <div className="cards-container"> 
                 {Users!=null ?
-        
-            Users.map((user)=>(
-            
-             <UserCard user={user} key ={user.id}/>
-                
-            ))
-            :
-            <div></div>
-            }
+    
+                    Users.map((user)=>(
+                        <UserCard 
+                        user={user} 
+                        key ={user.id}/>  
+                    
+                    ))
+
+                    :
+
+                    null
+
+                }
             </div>
         </div>
     )

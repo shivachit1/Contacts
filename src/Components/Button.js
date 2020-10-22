@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const Button=(props)=> {
     const history = useHistory();
+    
     const viewUserDetails = (user) => {
 
         history.push('/users/'+user.id);
