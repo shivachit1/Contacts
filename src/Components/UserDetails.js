@@ -30,7 +30,6 @@ const UserDetails=(props)=> {
             <h3>- name: {User.name}</h3>
             <h3>- username: {User.username}</h3>
             <h3>- email: {User.email}</h3>
-            <h3>- username: {User.username}</h3>
             <h3>- phone: {User.phone}</h3>
             <h3>- company: {User.company.name}</h3>
             <h3>- website: {User.website}</h3>
